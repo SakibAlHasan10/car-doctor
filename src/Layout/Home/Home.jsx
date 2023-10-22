@@ -4,7 +4,7 @@ import Contact from "./Contact/Contact";
 import CoreFeatures from "./CoreFeatures/CoreFeatures";
 import OurTeam from "./OurTeam/OurTeam";
 import PopularProduct from "./PopularProduct/PopularProduct";
-import Service from "./Service/Service";
+import Services from "./Services/Services";
 import Testimonial from "./Testimonial/Testimonial";
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <AboutUs></AboutUs>
-            <Service></Service>
+            <Services></Services>
             <Contact></Contact>
             <PopularProduct></PopularProduct>
             <OurTeam></OurTeam>
