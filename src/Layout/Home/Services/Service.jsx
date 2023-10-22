@@ -1,24 +1,26 @@
-import {BsArrowRight} from 'react-icons/bs';
+import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types"
 const Service = ({ service }) => {
   const { img, title, price } = service;
   return (
-    <div className="card  bg-red-100 shadow-xl">
+    <div className="card  bg-base-100-100 shadow-xl">
       <figure className="p-5">
-        <img
-          src={img}
-          alt="service"
-          className="rounded-xl h-52 w-full"
-        />
+        <img src={img} alt="service" className="rounded-xl h-52 w-full" />
       </figure>
       <div className="px-5 pb-5 text-left">
         <h2 className="card-title">{title}</h2>
         <div className=" flex mt-5 justify-between text-primary">
-        <p className='text-xl font-semibold'>Price:${price}</p>
-          <BsArrowRight className=' text-2xl'/>
+          <p className="text-xl font-semibold">Price:${price}</p>
+          <Link>
+            <BsArrowRight className=" text-2xl" />
+          </Link>
         </div>
       </div>
     </div>
   );
 };
-
+Service.propTypes ={
+    service: PropTypes.object
+}
 export default Service;
