@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 const Product = ({ product }) => {
   const { img, title, rating, price } = product;
   return (
-    <div className="card  bg-base-100-100 shadow-xl">
-      <figure className="p-5">
-        <img src={img} alt="service" className="rounded-xl h-52 w-full" />
+    <div className="card p-5 bg-base-100-100 shadow-xl">
+      <figure className="m-5 py-8 rounded-xl bg-base-200">
+        <img src={img} alt="service" className="rounded-xl h-36  w-48" />
       </figure>
-      <div className="px-5 pb-5 text-center">
+      <div className=" mt-2 text-center">
         <div>
           <Rating initialRating={rating} readonly />
         </div>
-        <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="text-xl font-semibold text-primary text-center">
+        <h2 className="text-2xl mt-2 font-bold">{title}</h2>
+        <p className="text-xl mt-2 font-semibold text-primary text-center">
           Price:${price}
         </p>
       </div>
