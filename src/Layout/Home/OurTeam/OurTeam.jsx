@@ -1,4 +1,4 @@
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   FaTwitter,
@@ -8,8 +8,6 @@ import {
 } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 const OurTeam = () => {
   return (
     <div>
@@ -23,11 +21,11 @@ const OurTeam = () => {
         </p>
       </div>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation]}
         spaceBetween={50}
         slidesPerView={3}
         navigation
-        pagination={{ clickable: true }}
+        // pagination={{ clickable: true }}
       >
         <SwiperSlide>
           <div className="border-2 p-5 rounded-xl">
