@@ -1,3 +1,5 @@
+import ClientTestimonial from "./ClientTestimonial";
+
 const Testimonial = () => {
   return (
     <div>
@@ -10,6 +12,7 @@ const Testimonial = () => {
           believable.{" "}
         </p>
       </div>
+      <ClientTestimonial/>
     </div>
   );
 };
