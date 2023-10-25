@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 const LoginWithSocial = () => {
   return (
@@ -16,12 +16,7 @@ const LoginWithSocial = () => {
         </div>
         
       </div>
-      <p className="text-lg font-normal">
-        Have an account?{" "}
-        <Link to={"/signup"} className="text-primary">
-          Sign In
-        </Link>
-      </p>
+      
     </div>
   );
 };

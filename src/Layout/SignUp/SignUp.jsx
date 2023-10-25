@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
-import login from "../../../src/assets/images/login/login.svg";
 import LoginWithSocial from "../../Sheare/LoginWithSocial/LoginWithSocial";
-const Login = () => {
+import login from "../../../src/assets/images/login/login.svg";
+import { Link } from "react-router-dom";
+
+const SignUp = () => {
   const handleLoginForm = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -21,6 +22,18 @@ const Login = () => {
               <h1 className="text-3xl font-bold mt-8">Login now!</h1>
             </div>
             <form onSubmit={handleLoginForm} className="pb-7 card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -63,8 +76,8 @@ const Login = () => {
               <LoginWithSocial />
               <p className="text-lg font-normal">
                 Have an account?{" "}
-                <Link to={"/signup"} className="text-primary">
-                  Sign Up
+                <Link to={"/login"} className="text-primary">
+                  Sign In
                 </Link>
               </p>
             </div>
@@ -75,4 +88,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
