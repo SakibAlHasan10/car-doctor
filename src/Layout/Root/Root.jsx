@@ -16,7 +16,7 @@ const Root = () => {
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
-            <div className=" w-10 h-10 rounded-md fixed top-1/2 border  right-4">
+            <div className={` w-10 h-10 rounded-md fixed top-1/2 border ${theme && "border-black"}  right-4`}>
             <span onClick={handleTheme} className=" cursor-pointer">
                 {
                 theme?  <MdDarkMode className="w-8 h-8 mx-auto mt-1" /> :<MdSunny className="w-8 h-8 mx-auto mt-1"/>
