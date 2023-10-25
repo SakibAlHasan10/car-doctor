@@ -1,4 +1,5 @@
 import login from "../../../src/assets/images/login/login.svg";
+import LoginWithSocial from "../../Sheare/LoginWithSocial/LoginWithSocial";
 const Login = () => {
     const handleLoginForm = (e)=>{
         e.preventDefault()
@@ -19,7 +20,7 @@ const Login = () => {
             <h1 className="text-3xl font-bold mt-8">Login now!</h1>
             
           </div>
-            <form onSubmit={handleLoginForm} className="card-body">
+            <form onSubmit={handleLoginForm} className="pb-7 card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -53,6 +54,10 @@ const Login = () => {
                 <button type="submit" className="btn bg-primary text-white hover:bg-white hover:text-primary hover:border-primary">Login</button>
               </div>
             </form>
+            <div className="text-center mb-10">
+
+      <LoginWithSocial/>
+            </div>
           </div>
         </div>
       </div>
