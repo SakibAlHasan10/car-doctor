@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../src/assets/logo.svg";
-import { HiMiniBars3CenterLeft } from 'react-icons/hi2';
+import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 const Navbar = () => {
   const nav = (
     <>
@@ -61,8 +61,7 @@ const Navbar = () => {
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
-           
-            <HiMiniBars3CenterLeft className="h-5 w-5"/>
+            <HiMiniBars3CenterLeft className="h-5 w-5" />
           </label>
           <ul
             tabIndex={0}

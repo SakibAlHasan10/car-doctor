@@ -5,7 +5,7 @@ const ShortBanner = ({children}) => {
       <div className="relative">
         <img src="../../../src/assets/images/checkout/checkout.png" alt="" />
         <div className="absolute bg-gradient-to-r from-[#151515] to-[#15151500] rounded-xl top-0 pt-28 text-white  text-5xl font-bold  w-full">
-          <h2 className="ml-24">Service Details</h2>
+          <h2 className="ml-24">{children}</h2>
           <div className="relative flex justify-center mt-[84px] ">
             <svg
               xmlns="http://www.w3.org/2000/svg"

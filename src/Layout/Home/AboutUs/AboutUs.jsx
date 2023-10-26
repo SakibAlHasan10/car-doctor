@@ -21,7 +21,7 @@ const AboutUs = () => {
           </div>
           <div className="flex-1 mt-10 ">
             <h3 className="text-[#FF3811] text-xl font-bold mb-5">About Us</h3>
-            <h2 className="text-4xl font-bold w-1/2 mb-7">
+            <h2 className="text-3xl md:text-4xl font-bold md:w-1/2 mb-7">
               We are qualified & of experience in this field
             </h2>
             <p className="mb-5">

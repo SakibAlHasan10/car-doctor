@@ -27,7 +27,7 @@ const ClientTestimonial = () => {
                 <h2 className="text-2xl font-bold">Awlad Hossain</h2>
                 <h4 className="text-xl font-semibold">Businessman</h4>
               </div>
-              <img src={img} alt="" className="w-16 h-16 ml-20" />
+              <img src={img} alt="" className="w-16 h-16 lg:ml-20" />
             </div>
             <p className="my-5 text-[#737373] mr-5">
               There are many variations of passages of Lorem Ipsum available,
@@ -50,7 +50,7 @@ const ClientTestimonial = () => {
                 <h2 className="text-2xl font-bold">Awlad Hossain</h2>
                 <h4 className="text-xl font-semibold">Businessman</h4>
               </div>
-              <img src={img} alt="" className="w-16 h-16 ml-20" />
+              <img src={img} alt="" className="w-16 h-16 lg:ml-20" />
             </div>
             <p className="my-5 text-[#737373] mr-5">
               There are many variations of passages of Lorem Ipsum available,
@@ -73,7 +73,7 @@ const ClientTestimonial = () => {
                 <h2 className="text-2xl font-bold">Awlad Hossain</h2>
                 <h4 className="text-xl font-semibold">Businessman</h4>
               </div>
-              <img src={img} alt="" className="w-16 h-16 ml-20" />
+              <img src={img} alt="" className="w-16 h-16 lg:ml-20" />
             </div>
             <p className="my-5 text-[#737373] mr-5">
               There are many variations of passages of Lorem Ipsum available,

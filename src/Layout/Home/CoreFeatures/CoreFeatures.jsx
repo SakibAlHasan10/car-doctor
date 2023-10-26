@@ -9,11 +9,11 @@ const CoreFeatures = () => {
     <div className="text-center mt-32">
       <h3 className="text-primary text-xl mb-5 font-bold">Core Features</h3>
       <h2 className="text-5xl font-bold">Why Choose Us</h2>
-      <p className="text-base mt-5 mb-12 font-normal w-[650px] mx-auto">
+      <p className="text-base mt-5 mb-12 font-normal md:w-[650px] mx-auto">
         the majority have suffered alteration in some form, by injected humour,
         or randomised words which don&apos;t look even slightly believable.{" "}
       </p>
-      <div className="flex justify-between">
+      <div className="grid grid-cols-3 gap-5 md:grid-cols-6">
         <div className="border p-6 rounded-lg hover:bg-primary hover:text-white">
           <img src={img1} alt="" className="mx-auto mb-2 " />
           <h3 className="text-lg font-bold">Expert Team</h3>
