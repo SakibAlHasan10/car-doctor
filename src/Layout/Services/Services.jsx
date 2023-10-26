@@ -1,5 +1,7 @@
 import ShortBanner from "../../Sheare/shortBanner";
-
+import logo from "../../../src/assets/logo.svg";
+import { Link } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
 const Services = () => {
   return (
     <div>
@@ -132,7 +134,59 @@ const Services = () => {
           </div>
           <div className="bg-black p-10 text-white my-8 rounded-md">
             <h2 className="text-6 font-bold">Download</h2>
+            <div className="flex justify-between">
+              <div></div>
+              <div>
+                <h4 className="mt-6 text-lg font-semibold">Our Brochure</h4>
+                <p className="text-base font-normal text-[#A2A2A2]">Download</p>
+              </div>
+              <div className=" bg-primary justify-center mt-5 rounded-md text-white w-14 flex items-center">
+                <Link to={"/services/"}>
+                  <BsArrowRight className=" text-2xl font-bold" />
+                </Link>
+              </div>
+            </div>
+            <div className="flex justify-between">
+              <div></div>
+              <div>
+                <h4 className="mt-6 text-lg font-semibold">Company Details</h4>
+                <p className="text-base font-normal text-[#A2A2A2]">Download</p>
+              </div>
+              <div className=" bg-primary justify-center mt-5 rounded-md text-white w-14 flex items-center">
+                <Link to={"/services/"}>
+                  <BsArrowRight className=" text-2xl font-bold" />
+                </Link>
+              </div>
+            </div>
           </div>
+          <div className="bg-black p-10 mb-8 rounded-md">
+            <div className="text-white text-center">
+              <img src={logo} alt="" className="w-36 h-20 mx-auto mb-5" />
+              <h3>
+                Need Help? We Are Here <br />
+                To Help You
+              </h3>
+            </div>
+            <div></div>
+            <div
+              className="text-center w-72 mt-7 p-5
+            pb-8 rounded-md h-32 bg-white"
+            >
+              <h3 className="text-xl font-bold">
+                <span className="text-primary">Car Doctor </span>Special
+              </h3>
+              <p className="text-base font-bold">
+                Save up to <span className="text-primary">60% off</span>
+              </p>
+            </div>
+            <h3 className="bg-primary mx-10 rounded-md -mt-7 text-center py-4 text-lg font-semibold text-white ">
+              Get A Quote
+            </h3>
+          </div>
+          <h2 className="text-4xl font-bold">Price $250.00</h2>
+          <h3 className="bg-primary rounded-md mt-7 text-center py-4 text-lg font-semibold text-white ">
+            Proceed Checkout
+          </h3>
         </div>
       </div>
     </div>
