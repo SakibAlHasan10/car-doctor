@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
   // signIn with email
   const signInWithEmail =(email, password)=>{
     setLoader(true)
-    signInWithEmailAndPassword(auth, email, password)
+    return signInWithEmailAndPassword(auth, email, password)
   }
   // user state change 
   useEffect(()=>{

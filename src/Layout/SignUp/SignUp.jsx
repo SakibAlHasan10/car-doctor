@@ -1,14 +1,24 @@
 import LoginWithSocial from "../../Sheare/LoginWithSocial/LoginWithSocial";
 import login from "../../../src/assets/images/login/login.svg";
 import { Link } from "react-router-dom";
+import useApi from "../../ContextApi/useApi";
 
 const SignUp = () => {
-  const handleLoginForm = (e) => {
+  const { createUserWithEmail } = useApi();
+  const handleCreateUser = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    createUserWithEmail(email, password)
+      .then((res) => {
+        res && alert('Your sign up successfully')
+        console.log(res.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="hero-content gap-10 flex-col lg:flex-row">
@@ -21,7 +31,7 @@ const SignUp = () => {
             <div className="text-center ">
               <h1 className="text-3xl font-bold mt-8">Login now!</h1>
             </div>
-            <form onSubmit={handleLoginForm} className="pb-7 card-body">
+            <form onSubmit={handleCreateUser} className="pb-7 card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -68,7 +78,7 @@ const SignUp = () => {
                   type="submit"
                   className="btn bg-primary text-white hover:bg-white hover:text-primary hover:border-primary"
                 >
-                  Login
+                  SignUp
                 </button>
               </div>
             </form>

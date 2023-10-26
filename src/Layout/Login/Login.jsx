@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
 import login from "../../../src/assets/images/login/login.svg";
 import LoginWithSocial from "../../Sheare/LoginWithSocial/LoginWithSocial";
+import useApi from "../../ContextApi/useApi";
 const Login = () => {
+  const { signInWithEmail } = useApi();
   const handleLoginForm = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
+    signInWithEmail(email, password)
+      .then((res) => {
+        res && alert("Your login successfully");
+        console.log(res.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="hero-content gap-10 flex-col lg:flex-row">
