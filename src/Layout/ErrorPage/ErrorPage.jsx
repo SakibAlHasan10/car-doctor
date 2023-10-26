@@ -1,5 +1,5 @@
 import Navbar from "../../Sheare/Navbar/Navbar";
-import error from "../../../public/frame.png"
+import error from "../../../src/assets/Frame.png"
 const ErrorPage = () => {
   return (
     <div className="max-w-screen-xl px-8 mx-auto">

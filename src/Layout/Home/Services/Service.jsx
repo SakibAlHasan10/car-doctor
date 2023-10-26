@@ -12,7 +12,7 @@ const Service = ({ service }) => {
         <h2 className="card-title">{title}</h2>
         <div className=" flex mt-5 justify-between text-primary">
           <p className="text-xl font-semibold">Price:${price}</p>
-          <Link>
+          <Link to={'/services/'}>
             <BsArrowRight className=" text-2xl" />
           </Link>
         </div>
