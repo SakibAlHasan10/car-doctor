@@ -3,7 +3,7 @@ import ShortBanner from "../../Sheare/shortBanner";
 const Services = () => {
   return (
     <div>
-      <ShortBanner></ShortBanner>
+      <ShortBanner>Service Details</ShortBanner>
     </div>
   );
 };

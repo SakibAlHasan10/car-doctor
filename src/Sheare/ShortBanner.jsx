@@ -1,4 +1,5 @@
-const ShortBanner = () => {
+import PropTypes from "prop-types"
+const ShortBanner = ({children}) => {
   return (
     <div>
       <div className="relative">
@@ -16,7 +17,7 @@ const ShortBanner = () => {
               <path d="M296 49.3H0L27.8 0H268.3L296 49.3Z" fill="#FF3811" />
             </svg>
             <h4 className={"text-xl font-medium absolute mt-2"}>
-              Home/Service Details
+              {"Home/"+children}
             </h4>
           </div>
         </div>
@@ -24,5 +25,7 @@ const ShortBanner = () => {
     </div>
   );
 };
-
+ShortBanner.propTypes={
+    children: PropTypes.string
+}
 export default ShortBanner;
