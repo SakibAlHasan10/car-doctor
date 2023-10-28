@@ -3,7 +3,7 @@ import logo from "../../../src/assets/logo.svg";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import useApi from "../../ContextApi/useApi";
 const Navbar = () => {
-  const {user} = useApi()
+  const {user, logout} = useApi()
   const nav = (
     <>
       <li>
@@ -59,7 +59,7 @@ const Navbar = () => {
       <li>
         {
           user?
-        <NavLink
+        <NavLink onClick={logout}
           to={`/login`}
           className={({ isActive, isPending }) =>
             isActive ? "active" : isPending ? "pending" : ""

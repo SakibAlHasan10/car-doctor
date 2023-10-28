@@ -1,28 +1,26 @@
 import ShortBanner from "../../Sheare/shortBanner";
 import logo from "../../../src/assets/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 const Services = () => {
+  const loaderData = useLoaderData()
+  console.log("hello",loaderData)
+  const {_id, title, img, price, description, facility, } = loaderData;
   return (
     <div>
       <ShortBanner>Service Details</ShortBanner>
       <div className="flex gap-6 mt-32">
         <div className="w-2/3">
           <img
-            src="../../../src/assets/images/services/2.jpg"
+            src={img}
             alt=""
             className="h-[400px] w-full rounded-xl"
           />
           <h2 className="text-4xl font-bold mt-12">
-            Unique Car Engine Service
+            {title}
           </h2>
           <p className="mt-8 text-[#737373] text-base font-normal">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don&apos;t look even slightly
-            believable. If you are going to use a passage of Lorem Ipsum, you
-            need to be sure there isn&apos;t anything embarrassing hidden in the
-            middle of text.
+            {description}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-7">
             <div className="p-10 rounded-lg border-t-2 bg-[#F3F3F3] border-primary">
@@ -183,10 +181,12 @@ const Services = () => {
               Get A Quote
             </h3>
           </div>
-          <h2 className="text-4xl font-bold">Price $250.00</h2>
-          <h3 className="bg-primary rounded-md mt-7 text-center py-4 text-lg font-semibold text-white ">
+          <h2 className="text-4xl font-bold">{price}</h2>
+            <button className="bg-primary w-full rounded-md mt-7 text-center py-4 text-lg font-semibold text-white ">
+          <Link to={"/check-out"} >
             Proceed Checkout
-          </h3>
+          </Link>
+            </button>
         </div>
       </div>
     </div>
