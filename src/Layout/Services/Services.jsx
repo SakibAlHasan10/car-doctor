@@ -4,8 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 const Services = () => {
   const loaderData = useLoaderData();
-  console.log("hello", loaderData);
-  const { title, img, price, description, facility } = loaderData;
+  const {_id, title, img, price, description, facility}=loaderData;
   return (
     <div>
       <ShortBanner>Service Details</ShortBanner>
@@ -157,9 +156,11 @@ const Services = () => {
             </h3>
           </div>
           <h2 className="text-4xl font-bold">{price}</h2>
-          <button className="bg-primary w-full rounded-md mt-7 text-center py-4 text-lg font-semibold text-white ">
-            <Link to={"/check-out"}>Proceed Checkout</Link>
-          </button>
+          <Link to={`/check-out/${_id}`}>
+            <button className="bg-primary w-full rounded-md mt-7 text-center py-4 text-lg font-semibold text-white ">
+              Proceed Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </div>
