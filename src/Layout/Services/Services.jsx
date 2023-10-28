@@ -3,54 +3,29 @@ import logo from "../../../src/assets/logo.svg";
 import { Link, useLoaderData } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 const Services = () => {
-  const loaderData = useLoaderData()
-  console.log("hello",loaderData)
-  const {_id, title, img, price, description, facility, } = loaderData;
+  const loaderData = useLoaderData();
+  console.log("hello", loaderData);
+  const { title, img, price, description, facility } = loaderData;
   return (
     <div>
       <ShortBanner>Service Details</ShortBanner>
       <div className="flex gap-6 mt-32">
         <div className="w-2/3">
-          <img
-            src={img}
-            alt=""
-            className="h-[400px] w-full rounded-xl"
-          />
-          <h2 className="text-4xl font-bold mt-12">
-            {title}
-          </h2>
+          <img src={img} alt="" className="h-[400px] w-full rounded-xl" />
+          <h2 className="text-4xl font-bold mt-12">{title}</h2>
           <p className="mt-8 text-[#737373] text-base font-normal">
             {description}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-7">
-            <div className="p-10 rounded-lg border-t-2 bg-[#F3F3F3] border-primary">
-              <h3 className=" text-5 font-bold mb-1 ">Instant Car Services</h3>
-              <p className="leading-7">
-                It uses a dictionary of over 200 Latin words, combined with a
-                model sentence structures.
-              </p>
-            </div>
-            <div className="p-10 rounded-lg border-t-2 bg-[#F3F3F3] border-primary">
-              <h3 className=" text-5 font-bold mb-1 ">24/7 Quality Service</h3>
-              <p className="leading-7">
-                It uses a dictionary of over 200 Latin words, combined with a
-                model sentence structures.
-              </p>
-            </div>
-            <div className="p-10 rounded-lg border-t-2 bg-[#F3F3F3] border-primary">
-              <h3 className=" text-5 font-bold mb-1 ">Easy Customer Service</h3>
-              <p className="leading-7">
-                It uses a dictionary of over 200 Latin words, combined with a
-                model sentence structures.
-              </p>
-            </div>
-            <div className="p-10 rounded-lg border-t-2 bg-[#F3F3F3] border-primary">
-              <h3 className=" text-5 font-bold mb-1 ">Quality Cost Service</h3>
-              <p className="leading-7">
-                It uses a dictionary of over 200 Latin words, combined with a
-                model sentence structures.
-              </p>
-            </div>
+            {facility?.map((faci, idx) => (
+              <div
+                key={idx}
+                className="p-10 rounded-lg border-t-2 bg-[#F3F3F3] border-primary"
+              >
+                <h3 className=" text-5 font-bold mb-1 ">{faci.name}</h3>
+                <p className="leading-7">{faci.details}</p>
+              </div>
+            ))}
           </div>
           <div>
             <p className="mt-8 text-[#737373] text-base font-normal">
@@ -182,11 +157,9 @@ const Services = () => {
             </h3>
           </div>
           <h2 className="text-4xl font-bold">{price}</h2>
-            <button className="bg-primary w-full rounded-md mt-7 text-center py-4 text-lg font-semibold text-white ">
-          <Link to={"/check-out"} >
-            Proceed Checkout
-          </Link>
-            </button>
+          <button className="bg-primary w-full rounded-md mt-7 text-center py-4 text-lg font-semibold text-white ">
+            <Link to={"/check-out"}>Proceed Checkout</Link>
+          </button>
         </div>
       </div>
     </div>
