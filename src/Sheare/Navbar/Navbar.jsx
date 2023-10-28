@@ -1,7 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../src/assets/logo.svg";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
+import useApi from "../../ContextApi/useApi";
 const Navbar = () => {
+  const {user} = useApi()
   const nav = (
     <>
       <li>
@@ -53,6 +55,26 @@ const Navbar = () => {
         >
           contact
         </NavLink>
+      </li>
+      <li>
+        {
+          user?
+        <NavLink
+          to={`/login`}
+          className={({ isActive, isPending }) =>
+            isActive ? "active" : isPending ? "pending" : ""
+          }
+        >
+          logout
+        </NavLink> : <NavLink
+          to={`/login`}
+          className={({ isActive, isPending }) =>
+            isActive ? "active" : isPending ? "pending" : ""
+          }
+        >
+          login
+        </NavLink>
+        }
       </li>
     </>
   );
