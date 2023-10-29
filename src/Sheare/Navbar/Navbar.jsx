@@ -3,7 +3,7 @@ import logo from "../../../src/assets/logo.svg";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import useApi from "../../ContextApi/useApi";
 const Navbar = () => {
-  const {user, logout} = useApi()
+  const { user, logout } = useApi();
   const nav = (
     <>
       <li>
@@ -23,7 +23,7 @@ const Navbar = () => {
             isActive ? "active" : isPending ? "pending" : ""
           }
         >
-          About
+          About Us
         </NavLink>
       </li>
       <li>
@@ -56,26 +56,42 @@ const Navbar = () => {
           contact
         </NavLink>
       </li>
-      <li>
-        {
-          user?
-        <NavLink onClick={logout}
-          to={`/login`}
-          className={({ isActive, isPending }) =>
-            isActive ? "active" : isPending ? "pending" : ""
-          }
-        >
-          logout
-        </NavLink> : <NavLink
-          to={`/login`}
-          className={({ isActive, isPending }) =>
-            isActive ? "active" : isPending ? "pending" : ""
-          }
-        >
-          login
-        </NavLink>
-        }
-      </li>
+      {user ? (
+        <>
+          <li>
+            <NavLink
+              to={`/bookings`}
+              className={({ isActive, isPending }) =>
+                isActive ? "active" : isPending ? "pending" : ""
+              }
+            >
+              Booking
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              onClick={logout}
+              to={`/login`}
+              className={({ isActive, isPending }) =>
+                isActive ? "active" : isPending ? "pending" : ""
+              }
+            >
+              logout
+            </NavLink>
+          </li>
+        </>
+      ) : (
+        <li>
+          <NavLink
+            to={`/login`}
+            className={({ isActive, isPending }) =>
+              isActive ? "active" : isPending ? "pending" : ""
+            }
+          >
+            login
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (
