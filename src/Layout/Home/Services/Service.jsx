@@ -2,7 +2,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types"
 const Service = ({ service }) => {
-  console.log(service)
+  // console.log(service)
   const {_id, img, title, price } = service;
   return (
     <div className="card  bg-base-100-100 shadow-xl">

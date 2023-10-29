@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../../src/assets/images/login/login.svg";
 import LoginWithSocial from "../../Sheare/LoginWithSocial/LoginWithSocial";
 import useApi from "../../ContextApi/useApi";
 const Login = () => {
   const { signInWithEmail } = useApi();
+  const location =useLocation()
+  const navigate = useNavigate()
   const handleLoginForm = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,8 +14,8 @@ const Login = () => {
     // console.log(email, password);
     signInWithEmail(email, password)
       .then((res) => {
+        navigate(location?.state? location.state : "/")
         res && alert("Your login successfully");
-        console.log(res.user);
       })
       .catch((error) => {
         console.log(error);
