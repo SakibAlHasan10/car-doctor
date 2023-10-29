@@ -14,7 +14,7 @@ const Booking = () => {
       });
   }, [url]);
   const handleDelete = (id)=>{
-    console.log(id)
+    // console.log(id)
     const proceed = confirm("are you sure you went to delete")
     if(proceed){
 
@@ -30,6 +30,26 @@ const Booking = () => {
         })
     }
   }
+  const handleCOnfirm =(id)=>{
+    console.log(id)
+    fetch(`http://localhost:5000/bookings/${id}`, {
+        method:"PATCH",
+        headers:{
+            "content-type":"application/json"
+        },
+        body:JSON.stringify({status:"Confirm"})
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        if(data.matchedCount>0){
+            alert("your booking confirm")
+            const remainder = bookings?.filter(book => book._id !==id)
+            const update = bookings?.find(book => book._id=== id)
+            const newBookings = [update, ...remainder]
+                setBookings(newBookings)
+        }
+    })
+  }
   return (
     <div className="">
       <ShortBanner>Cart Details</ShortBanner>
@@ -44,6 +64,11 @@ const Booking = () => {
             <h2>{booking?.title}</h2>
             <p>${booking?.price}</p>
             <p>${booking?.date}</p>
+            <button onClick={()=>handleCOnfirm(booking?._id)} className="btn-sm">
+                {
+                booking?.status? <span className="text-green-500">Confirm</span>: <span>Pending</span>
+                }
+            </button>
           </div>
         ))}
       </div>
