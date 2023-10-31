@@ -1,7 +1,8 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, } from "react-router-dom";
 import login from "../../../src/assets/images/login/login.svg";
 import LoginWithSocial from "../../Sheare/LoginWithSocial/LoginWithSocial";
 import useApi from "../../ContextApi/useApi";
+import axios from "axios";
 const Login = () => {
   const { signInWithEmail } = useApi();
   const location =useLocation()
@@ -14,8 +15,18 @@ const Login = () => {
     // console.log(email, password);
     signInWithEmail(email, password)
       .then((res) => {
+        const loggedInUser = res.user;
+        console.log(loggedInUser)
+        const user = {email}
+        // res && alert("Your login successfully");
+        axios.post("http://localhost:5000/jwt", user,{withCredentials:true})
+        .then(res =>{
+          if(res.data.success){
         navigate(location?.state? location.state : "/")
-        res && alert("Your login successfully");
+
+          }
+          console.log(res.data)
+        })
       })
       .catch((error) => {
         console.log(error);

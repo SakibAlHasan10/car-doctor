@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import useApi from "../../ContextApi/useApi";
 import ShortBanner from "../../Sheare/shortBanner";
+import axios from "axios";
 
 const Booking = () => {
   const [bookings, setBookings] = useState([]);
   const { user } = useApi();
   const url = `http://localhost:5000/bookings?email=${user?.email}`;
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setBookings(data);
-      });
+    axios.get(url, {withCredentials: true})
+    .then(res=>{
+      setBookings(res.data)
+    })
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setBookings(data);
+    //   });
   }, [url]);
   const handleDelete = (id)=>{
     // console.log(id)
@@ -30,6 +35,12 @@ const Booking = () => {
         })
     }
   }
+
+ 
+
+
+
+
   const handleCOnfirm =(id)=>{
     console.log(id)
     fetch(`http://localhost:5000/bookings/${id}`, {
@@ -45,6 +56,7 @@ const Booking = () => {
             alert("your booking confirm")
             const remainder = bookings?.filter(book => book._id !==id)
             const update = bookings?.find(book => book._id=== id)
+            update.status="Confirm"
             const newBookings = [update, ...remainder]
                 setBookings(newBookings)
         }
